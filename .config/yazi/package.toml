@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "Ape/mediainfo", rev = "c69314e" }, { use = "Sonico98/exifaudio", rev = "d794614" }, { use = "dedukun/bookmarks", rev = "20ece7e" }]
+
+[flavor]
+deps = []
