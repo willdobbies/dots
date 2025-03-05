@@ -121,6 +121,9 @@ export MANPAGER='nvim +Man!'
 export QT_QPA_PLATFORMTHEME=gtk3
 
 # Python
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 source "$HOME/.local/venv/bin/activate"
 
@@ -136,8 +139,8 @@ source "/usr/share/doc/fzf/examples/key-bindings.bash"
 export NNN_PLUG="f:finder;o:fzopen;c:fzcd;"
 
 # Keybinds
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
+# bind -m vi-command 'Control-l: clear-screen'
+# bind -m vi-insert 'Control-l: clear-screen'
 
 # Prompt theme
 #export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "
