@@ -8,5 +8,10 @@ use = "yazi-rs/plugins:smart-enter"
 rev = "a1b678d"
 hash = "7918aab6a71caf31b58411f789195677"
 
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "b23e3a4"
+hash = "98e5f5af3efd3ba8bc2db0720187cc83"
+
 [flavor]
 deps = []

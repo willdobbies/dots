@@ -42,3 +42,8 @@ desc = "Fuzzy find search"
 on   = "R"
 run  = "shell 'vimv \"$@\"' --block"
 desc = "Vim bulk rename"
+
+[[manager.prepend_keymap]]
+on   = [ ".", "s" ]
+run  = "plugin what-size"
+desc = "Calc size of selection or cwd"
