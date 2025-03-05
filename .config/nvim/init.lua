@@ -20,8 +20,10 @@ vim.call('plug#end')
 require('lualine').setup()
 -- :lua require('fzf-lua').files()
 
+vim.g.mapleader = ';'
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', '<leader>f', ':Files<CR>')
 
 vim.cmd('silent! colorscheme jellybeans')
 vim.cmd('silent! set linebreak')

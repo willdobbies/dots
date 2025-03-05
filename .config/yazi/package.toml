@@ -1,5 +1,12 @@
-[plugin]
-deps = [{ use = "Ape/mediainfo", rev = "c69314e" }, { use = "Sonico98/exifaudio", rev = "d794614" }, { use = "dedukun/bookmarks", rev = "20ece7e" }]
+[[plugin.deps]]
+use = "dedukun/bookmarks"
+rev = "20ece7e"
+hash = "f1e214311e1c92ce53d35ea3254033c7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "a1b678d"
+hash = "7918aab6a71caf31b58411f789195677"
 
 [flavor]
 deps = []
