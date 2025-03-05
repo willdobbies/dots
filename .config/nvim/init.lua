@@ -11,7 +11,7 @@ Plug('nvim-lualine/lualine.nvim')
 Plug ('smithbm2316/centerpad.nvim')
 
 --- Utils
-Plug ('pocco81/auto-save.nvim')
+--- Plug ('pocco81/auto-save.nvim')
 Plug ('junegunn/fzf')
 Plug ('junegunn/fzf.vim')
 

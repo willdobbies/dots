@@ -32,3 +32,13 @@ desc = "Enter the child directory, or open the file"
 on   = [ "c", "m" ]
 run  = "plugin chmod"
 desc = "Chmod on selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "F" ]
+run  = "plugin fzf"
+desc = "Fuzzy find search"
+
+[[manager.prepend_keymap]]
+on   = "R"
+run  = "shell 'vimv \"$@\"' --block"
+desc = "Vim bulk rename"
