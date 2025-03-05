@@ -44,6 +44,6 @@ run  = "shell 'vimv \"$@\"' --block"
 desc = "Vim bulk rename"
 
 [[manager.prepend_keymap]]
-on   = [ ".", "s" ]
+on   = [ "s", "s" ]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd"
