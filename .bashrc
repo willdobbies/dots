@@ -126,7 +126,7 @@ source "$HOME/.local/venv/bin/activate"
 
 # Alias
 alias fd="fdfind"
-alias fm="source ranger"
+alias fm="y"
 alias serve="python3 -m http.server"
 
 # Configs
@@ -141,3 +141,6 @@ bind -m vi-insert 'Control-l: clear-screen'
 
 # Prompt theme
 #export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/cj/.lmstudio/bin"
