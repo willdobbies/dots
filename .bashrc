@@ -121,9 +121,9 @@ export MANPAGER='nvim +Man!'
 export QT_QPA_PLATFORMTHEME=gtk3
 
 # Python
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - bash)"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 source "$HOME/.local/venv/bin/activate"
 
