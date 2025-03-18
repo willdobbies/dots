@@ -76,21 +76,21 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -121,29 +121,16 @@ export MANPAGER='nvim +Man!'
 export QT_QPA_PLATFORMTHEME=gtk3
 
 # Python
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init - bash)"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 source "$HOME/.local/venv/bin/activate"
 
-# Alias
-alias fd="fdfind"
-alias fm="y"
-alias serve="python3 -m http.server"
+# PyEnv
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init - bash)"
 
 # Configs
 source "$HOME/.config/yazi/quitcd.sh"
 source "$HOME/.config/nnn/quitcd.sh"
 source "/usr/share/doc/fzf/examples/key-bindings.bash"
 export NNN_PLUG="f:finder;o:fzopen;c:fzcd;"
-
-# Keybinds
-# bind -m vi-command 'Control-l: clear-screen'
-# bind -m vi-insert 'Control-l: clear-screen'
-
-# Prompt theme
-#export PS1="\[$(tput setaf 216)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 222)\]\h \[$(tput setaf 229)\]\w \[$(tput sgr0)\]$ "
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/cj/.lmstudio/bin"
