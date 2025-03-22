@@ -1,3 +1,2 @@
--o %(playlist)s/%(chapter)s/%(playlist_index)s_%(title)s.%(ext)s
 --cookies ~/.config/yt-dlp/cookies.txt
 --restrict-filenames
