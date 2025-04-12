@@ -118,7 +118,6 @@ export PATH="$PATH:$HOME/.local/bin"
 # Defaults
 export EDITOR='/usr/bin/nvim'
 export MANPAGER='nvim +Man!'
-export QT_QPA_PLATFORMTHEME=gtk3
 
 # Python
 export VIRTUAL_ENV_DISABLE_PROMPT=1
