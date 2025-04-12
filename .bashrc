@@ -131,6 +131,4 @@ source "$HOME/.local/venv/bin/activate"
 
 # Configs
 source "$HOME/.config/yazi/quitcd.sh"
-source "$HOME/.config/nnn/quitcd.sh"
 source "/usr/share/doc/fzf/examples/key-bindings.bash"
-export NNN_PLUG="f:finder;o:fzopen;c:fzcd;"
