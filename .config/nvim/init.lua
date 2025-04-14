@@ -20,6 +20,7 @@ vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<leader>f', ':Files<CR>')
 vim.keymap.set('n', '<leader>r', ':RG<CR>')
+vim.cmd('nmap <silent> <Esc> :noh<CR>')
 
 --- TWEAKS ---
 vim.cmd('set number')
@@ -27,3 +28,6 @@ vim.cmd('set shiftwidth=4 smarttab')
 -- vim.cmd(":set iskeyword-=_")
 vim.cmd('silent! colorscheme jellybeans')
 vim.cmd('silent! set linebreak')
+
+--- Clipboard access
+vim.api.nvim_set_option("clipboard","unnamedplus")
