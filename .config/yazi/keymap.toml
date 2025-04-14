@@ -49,21 +49,6 @@ run  = "plugin what-size"
 desc = "Calc size of selection or cwd"
 
 [[manager.prepend_keymap]]
-on   = [";", "i"]
-run  = 'shell "ax-identify \"$@\"" --block'
-desc = "Alexza script: Identify"
-
-[[manager.prepend_keymap]]
-on   = [";", "s"]
-run  = 'shell "ax-sort" --block'
-desc = "Alexza script: Sort"
-
-[[manager.prepend_keymap]]
-on   = [";", "r"]
-run  = 'shell "fzfrg" --block'
-desc = "Alexza script: Sort"
-
-[[manager.prepend_keymap]]
 on  = "K"
 run = "plugin parent-arrow -1"
 
