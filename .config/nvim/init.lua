@@ -15,7 +15,7 @@ vim.call('plug#end')
 require('lualine').setup()
 
 --- KEYBINDS ---
-vim.g.mapleader = ';'
+vim.g.mapleader = ' '
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<leader>f', ':Files<CR>')
