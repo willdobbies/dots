@@ -1,0 +1,5 @@
+configuration {
+ modi: "combi,drun,window,ssh";
+ combi-modi: "drun,run -show-icons";
+}
+@theme "/home/cj/.local/share/rofi/themes/squared-nord.rasi"
