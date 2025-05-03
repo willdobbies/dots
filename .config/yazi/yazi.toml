@@ -1,2 +1,4 @@
 [manager]
+ratio = [0, 3, 2]
 linemode = "size_and_mtime"
+mouse_events= []

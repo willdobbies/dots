@@ -8,3 +8,6 @@ dirs  = []
 files = []
 exts  = []
 conds = []
+
+[manager]
+border_symbol = "|"

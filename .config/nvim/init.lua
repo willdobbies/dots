@@ -7,7 +7,8 @@ vim.call('plug#begin')
 Plug ('junegunn/fzf')
 Plug ('junegunn/fzf.vim')
 Plug ('smithbm2316/centerpad.nvim')
-Plug('nanotech/jellybeans.vim')
+--Plug('nanotech/jellybeans.vim')
+Plug('shaunsingh/nord.nvim')
 Plug('nvim-lualine/lualine.nvim')
 
 vim.call('plug#end')
@@ -21,12 +22,13 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<leader>f', ':Files<CR>')
 vim.keymap.set('n', '<leader>r', ':RG<CR>')
 vim.cmd('nmap <silent> <Esc> :noh<CR>')
+vim.opt.mouse = ""
 
 --- TWEAKS ---
 vim.cmd('set number')
 vim.cmd('set shiftwidth=4 smarttab')
 -- vim.cmd(":set iskeyword-=_")
-vim.cmd('silent! colorscheme jellybeans')
+vim.cmd('silent! colorscheme nord')
 vim.cmd('silent! set linebreak')
 
 --- Clipboard access

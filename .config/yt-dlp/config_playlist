@@ -1,0 +1,2 @@
+-o "%(playlist_index)s-%(title)s.%(ext)s"
+--restrict-filenames

@@ -24,8 +24,9 @@
         "cpu",
         "memory",
         "network",
-        //"pulseaudio",
         "tray",
+        "battery",
+        //"pulseaudio",
         "clock"
     ],
     "keyboard-state": {
