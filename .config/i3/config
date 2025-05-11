@@ -235,12 +235,13 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3blocks
   i3bar_command   i3bar
-  font pango:monospace 10
+  #font pango:monospace 10
+  #font pango: FontAwesome Regular 10
 
   position top
   colors {
 	  #background #00000099
-	  background #444444
+	  background #111111
   }
 }
 

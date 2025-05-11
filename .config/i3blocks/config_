@@ -25,8 +25,9 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=10
-markup=pango
+separator_block_width=15
+markup=none
+
 
 # CPU usage
 #
@@ -38,13 +39,12 @@ interval=10
 #min_width=CPU: 100.00%
 separator=true
 
-
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
-separator=false
+separator=true
 interval=30
 
 [memory]
@@ -71,12 +71,12 @@ interval=30
 #instance=wlan0
 color=#00FF00
 interval=10
-separator=false
+separator=true
 
 [wifi]
 #instance=wlp3s0
 interval=10
-separator=false
+separator=true
 
 [bandwidth]
 #instance=eth0
@@ -88,26 +88,22 @@ interval=5
 # Battery indicator
 #
 # The battery instance defaults to 0.
+# [battery]
+# label=BAT0
+# label=⚡
+# instance=1
+# interval=30
+
 [battery]
-label=BAT
-label=⚡
-#instance=1
+command=$SCRIPT_DIR/battery.py
+markup=pango
 interval=30
 
 # Date Time
 #
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
-
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[temperature]
-label=TEMP
-interval=10
+interval=1
 
 # Volume indicator
 #
@@ -121,3 +117,44 @@ instance=Master
 #instance=PCM
 interval=once
 signal=10
+separator=true
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# OpenVPN support
+#
+# Support multiple VPN, with colors.
+#[openvpn]
+#interval=20
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+#[temperature]
+#label=TEMP
+#interval=10
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
