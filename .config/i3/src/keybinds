@@ -1,14 +1,3 @@
-# Base font
-font pango:monospace 8
-
-# Borders
-default_border pixel 3
-hide_edge_borders smart
-
-# Gaps
-gaps inner 10
-smart_gaps off
-
 set $mod Mod4
 
 set $left h
@@ -171,56 +160,3 @@ bindsym $mod+r mode "resize"
 #floating_modifier Mod4
 
 bindsym $mod+shift+b bar mode toggle
-exec --no-startup-id blueman-applet
-exec --no-startup-id picom
-exec --no-startup-id wallpaper-update
-exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/.wallpaper
-#bar {
-#        status_command i3status
-#}
-
-#######
-#THEME#
-#######
-
-# set primary gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-
-
-bar {
-  status_command i3blocks
-  i3bar_command   i3bar
-
-  position top
-  colors {
-      background $bg
-      statusline $yellow
-      focused_workspace    $aqua $aqua $darkgray
-      inactive_workspace   $darkgray $darkgray $gray
-      active_workspace     $darkgray $darkgray $gray
-      urgent_workspace     $red $red $bg
-  }
-}
-
-# blue gruvbox
-# class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $gray $purple $darkgray
-client.unfocused        $darkgray $darkgray $gray $purple $darkgray
-client.urgent           $red $red $white $red $red
-
-# green gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-#client.urgent           $red $red $white $red $red

@@ -1,0 +1,11 @@
+bar {
+  status_command i3blocks
+  i3bar_command   i3bar
+
+  position top
+  colors {
+	  #background #00000099
+	  background #111111
+  }
+}
+
