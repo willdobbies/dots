@@ -30,35 +30,33 @@ vim.o.scrolloff = 10
 -- prompt save on quit with unsaved changes
 vim.o.confirm = true
 
+-- Disable mouse
+vim.opt.mouse = ""
+
 --- PLUGINS ---
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
 -- Navigation
-Plug ('junegunn/fzf')
-Plug ('junegunn/fzf.vim')
-Plug ('nvim-treesitter/nvim-treesitter')
-
--- Linting
-Plug ('stevearc/conform.nvim')
+Plug 'junegunn/fzf'
 
 -- VCS
-Plug ('lewis6991/gitsigns.nvim')
-Plug ('tpope/vim-fugitive')
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'tpope/vim-fugitive'
 
 -- UI
-Plug ('folke/todo-comments.nvim')
-Plug('nvim-lualine/lualine.nvim')
-Plug ('folke/which-key.nvim')
+Plug 'folke/todo-comments.nvim'
+Plug'nvim-lualine/lualine.nvim'
+
+Plug 'folke/which-key.nvim'
+Plug 'folke/zen-mode.nvim'
 
 -- Themes
-Plug('nanotech/jellybeans.vim')
-Plug('shaunsingh/nord.nvim')
+Plug'nanotech/jellybeans.vim'
+Plug'shaunsingh/nord.nvim'
 
 vim.call('plug#end')
-
-require('lualine').setup()
 
 --- THEME ---
 vim.cmd('silent! colorscheme jellybeans')
@@ -68,9 +66,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
-vim.keymap.set('n', '<leader>f', ':Files<CR>')
-vim.keymap.set('n', '<leader>r', ':RG<CR>')
-vim.keymap.set('n', '<leader>w', ':wa<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.opt.mouse = ""
 
+-- FZF
+vim.keymap.set('n', '<leader>f', ':GFiles<CR>')
+vim.keymap.set('n', '<leader>r', ':RG<CR>')
+vim.keymap.set('n', '<leader>h', ':Help<CR>')
+vim.keymap.set('n', '<leader>w', ':Windows<CR>')
+vim.keymap.set('n', '<leader>t', ':Tags<CR>')
+vim.keymap.set('n', '<leader>m', ':Marks<CR>')
