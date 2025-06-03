@@ -1,57 +1,43 @@
-[[manager.prepend_keymap]]
-on   = "!"
-run  = 'shell "$SHELL" --block'
-desc = "Open shell here"
+[mgr]
+prepend_keymap = [
+    # Enter shell
+    { on = '!', run  = 'shell "$SHELL" --block', desc = "Open shell here" },
 
-[[manager.prepend_keymap]]
-on = [ "m" ]
-run = "plugin bookmarks save"
-desc = "Save current position as a bookmark"
+    # Move parent directories
+    { on  = 'K', run = 'plugin parent-arrow -1' },
+    { on  = 'J', run = 'plugin parent-arrow 1' },
 
-[[manager.prepend_keymap]]
-on = [ "'" ]
-run = "plugin bookmarks jump"
-desc = "Jump to a bookmark"
+    # Better renaming
+    { on   = "R", run  = "shell 'vimv \"$@\"' --block", desc = "Bulk rename (vimv)" },
 
-[[manager.prepend_keymap]]
-on = [ "b", "d" ]
-run = "plugin bookmarks delete"
-desc = "Delete a bookmark"
+    # Bookmarks
+    { on = 'm', run  = 'plugin bookmarks save' },
+    { on = "'", run  = 'plugin bookmarks jump' },
+    { on = ['b', 'd'], run  = 'plugin bookmarks delete' },
 
-[[manager.prepend_keymap]]
-on = [ "b", "D" ]
-run = "plugin bookmarks delete_all"
-desc = "Delete all bookmarks"
+    # Plugins
+    { on = '<Enter>', run  = 'plugin smart-enter' },
+    { on = [ 'c', 'm' ], run  = 'plugin chmod' },
+    { on   = 'F', run  = 'plugin fzf' },
 
-[[manager.prepend_keymap]]
-on   = "<Enter>"
-run  = "plugin smart-enter"
-desc = "Enter the child directory, or open the file"
+    # Root dir shortcuts
+    { on = [ 'g', 'r' ], run  = 'cd /' },
+    { on = [ 'g', 'e' ], run  = 'cd /etc' },
+    { on = [ 'g', 'm' ], run  = 'cd /media' },
+    { on = [ 'g', 'o' ], run  = 'cd /opt' },
+    { on = [ 'g', 's' ], run  = 'cd /usr/share' },
+    { on = [ 'g', 'u' ], run  = 'cd /usr' },
+    { on = [ 'g', 'v' ], run  = 'cd /var' },
 
-[[manager.prepend_keymap]]
-on   = [ "c", "m" ]
-run  = "plugin chmod"
-desc = "Chmod on selected files"
+    # Mounting
+    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Select device then mount" },
+    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Select device then eject" },
 
-[[manager.prepend_keymap]]
-on   = [ "F" ]
-run  = "plugin fzf"
-desc = "Fuzzy find search"
+    { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
 
-[[manager.prepend_keymap]]
-on   = "R"
-run  = "shell 'vimv \"$@\"' --block"
-desc = "Vim bulk rename"
+    # Jump
+    #{ on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
+]
 
-[[manager.prepend_keymap]]
-on   = [ "s", "s" ]
-run  = "plugin what-size"
-desc = "Calc size of selection or cwd"
-
-[[manager.prepend_keymap]]
-on  = "K"
-run = "plugin parent-arrow -1"
-
-[[manager.prepend_keymap]]
-on  = "J"
-run = "plugin parent-arrow 1"

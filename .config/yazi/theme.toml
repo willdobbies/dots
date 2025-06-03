@@ -9,5 +9,5 @@ files = []
 exts  = []
 conds = []
 
-[manager]
+[mgr]
 border_symbol = "|"

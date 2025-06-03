@@ -13,5 +13,10 @@ use = "pirafrank/what-size"
 rev = "b23e3a4"
 hash = "98e5f5af3efd3ba8bc2db0720187cc83"
 
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "d9dec48"
+hash = "a87ce02e3893885c919eabadfa983504"
+
 [flavor]
 deps = []

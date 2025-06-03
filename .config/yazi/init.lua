@@ -28,3 +28,10 @@ function Linemode:size_and_mtime()
 	local size = self._file:size()
 	return string.format("%s %s", size and ya.readable_size(size) or "-", time)
 end
+
+require("gvfs"):setup({
+  -- (Optional) disable/enable remember passwords using keyring. Default: true
+  enabled_keyring = false,
+  -- (Optional) save password automatically after mounting. Default: false
+  save_password_autoconfirm = true,
+})
