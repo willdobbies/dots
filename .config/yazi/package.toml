@@ -18,5 +18,10 @@ use = "boydaihungst/gvfs"
 rev = "d9dec48"
 hash = "a87ce02e3893885c919eabadfa983504"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "86d28e4"
+hash = "e01006bfb38951ea89031bd918b20dbb"
+
 [flavor]
 deps = []

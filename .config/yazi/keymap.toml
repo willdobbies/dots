@@ -39,5 +39,8 @@ prepend_keymap = [
 
     # Jump
     #{ on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
+
+    # Alexza
+    { on = [ "<C-p>", "i" ], run = "shell 'ax-identify \"$@\"' --block"},
 ]
 

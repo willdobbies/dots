@@ -2,3 +2,13 @@
 ratio = [1, 5, 3]
 linemode = "size_and_mtime"
 mouse_events= []
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
