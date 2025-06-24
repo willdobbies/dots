@@ -3,6 +3,13 @@ prepend_keymap = [
     # Enter shell
     { on = '!', run  = 'shell "$SHELL" --block', desc = "Open shell here" },
 
+    # Q to close tabs + quit
+    { on  = 'q', run = 'close' },
+
+    # Move (disable wrapping)
+    { on  = 'k', run = 'arrow -1' },
+    { on  = 'j', run = 'arrow 1' },
+
     # Move parent directories
     { on  = 'K', run = 'plugin parent-arrow -1' },
     { on  = 'J', run = 'plugin parent-arrow 1' },
