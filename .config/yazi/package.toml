@@ -1,27 +1,27 @@
 [[plugin.deps]]
 use = "dedukun/bookmarks"
-rev = "20ece7e"
-hash = "f1e214311e1c92ce53d35ea3254033c7"
+rev = "fbb7c00"
+hash = "1d231a808d3344546380df33daf43e91"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "a1b678d"
-hash = "7918aab6a71caf31b58411f789195677"
-
-[[plugin.deps]]
-use = "pirafrank/what-size"
-rev = "b23e3a4"
-hash = "98e5f5af3efd3ba8bc2db0720187cc83"
-
-[[plugin.deps]]
-use = "boydaihungst/gvfs"
-rev = "d9dec48"
-hash = "a87ce02e3893885c919eabadfa983504"
+rev = "5eea960"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "86d28e4"
+rev = "5eea960"
 hash = "e01006bfb38951ea89031bd918b20dbb"
+
+[[plugin.deps]]
+use = "Ape/simple-status"
+rev = "d0da104"
+hash = "68603fdd1dcaf415227e2c77a9317947"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "5eea960"
+hash = "a030fe48d91b04341ad2fba9be957df"
 
 [flavor]
 deps = []

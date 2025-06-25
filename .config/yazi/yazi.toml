@@ -1,6 +1,5 @@
 [mgr]
 ratio = [1, 5, 3]
-linemode = "size_and_mtime"
 mouse_events= []
 
 [[plugin.prepend_fetchers]]
@@ -12,6 +11,3 @@ run  = "git"
 id   = "git"
 name = "*/"
 run  = "git"
-
-[preview]
-ueberzug_offset=[0.9,3,0.85,0.85]
