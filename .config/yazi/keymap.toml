@@ -10,8 +10,9 @@ prepend_keymap = [
     { on  = 'k', run = 'arrow -1' },
     { on  = 'j', run = 'arrow 1' },
 
-    { on = 'm', run = 'plugin bookmarks save' },
-    { on = "'", run = 'plugin bookmarks jump' },
+    { on = "'", run = 'plugin bunny' },
+    { on = "\"", run = 'plugin bunny fuzzy' },
+    #{ on = ['b','d'], run = 'plugin bookmarks delete' },
 
     # Move parent directories
     { on  = 'K', run = 'plugin parent-arrow -1' },
@@ -24,15 +25,6 @@ prepend_keymap = [
     { on = '<Enter>', run  = 'plugin smart-enter' },
     { on = [ 'c', 'm' ], run  = 'plugin chmod' },
     { on   = 'F', run  = 'plugin fzf' },
-
-    # Root dir shortcuts
-    { on = [ 'g', 'r' ], run  = 'cd /' },
-    { on = [ 'g', 'e' ], run  = 'cd /etc' },
-    { on = [ 'g', 'm' ], run  = 'cd /media' },
-    { on = [ 'g', 'o' ], run  = 'cd /opt' },
-    { on = [ 'g', 's' ], run  = 'cd /usr/share' },
-    { on = [ 'g', 'u' ], run  = 'cd /usr' },
-    { on = [ 'g', 'v' ], run  = 'cd /var' },
 
     # Mounting
     { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Select device then mount" },
