@@ -29,6 +29,7 @@ require("bunny"):setup({
         { key={'/','o'}, path='/opt' },
         { key={'/','s'}, path='/usr/share' },
         { key={'/','u'}, path='/usr' },
+        { key={'/','l'}, path='/usr/local/' },
         { key={'/','v'}, path='/var' },
     },
     desc_strategy = "path",
