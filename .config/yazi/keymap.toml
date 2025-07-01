@@ -4,27 +4,24 @@ prepend_keymap = [
     { on = '!', run  = 'shell "$SHELL" --block', desc = "Open shell here" },
 
     # Q to close tabs + quit
-    { on  = 'q', run = 'close' },
+    { on  = "q", run = "close" },
 
-    # Move (disable wrapping)
-    { on  = 'k', run = 'arrow -1' },
-    { on  = 'j', run = 'arrow 1' },
-
-    { on = "'", run = 'plugin bunny' },
-    { on = "\"", run = 'plugin bunny fuzzy' },
-    #{ on = ['b','d'], run = 'plugin bookmarks delete' },
+    # Bookmarks
+    {on = "m", run = "plugin bookmarks save"},
+    {on = "'", run = "plugin bookmarks jump"},
+    {on = ["b", "d"],  run = "plugin bookmarks delete"},
 
     # Move parent directories
-    { on  = 'K', run = 'plugin parent-arrow -1' },
-    { on  = 'J', run = 'plugin parent-arrow 1' },
+    { on  = "K", run = "plugin parent-arrow -1" },
+    { on  = "J", run = "plugin parent-arrow 1" },
 
     # Better renaming
     { on   = "R", run  = "shell 'vimv \"$@\"' --block", desc = "Bulk rename (vimv)" },
 
     # Plugins
-    { on = '<Enter>', run  = 'plugin smart-enter' },
-    { on = [ 'c', 'm' ], run  = 'plugin chmod' },
-    { on   = 'F', run  = 'plugin fzf' },
+    { on = "<Enter>", run  = "plugin smart-enter" },
+    { on = [ "c", "m" ], run  = "plugin chmod" },
+    { on   = "F", run  = "plugin fzf" },
 
     # Mounting
     { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Select device then mount" },
@@ -36,6 +33,23 @@ prepend_keymap = [
 
     # Alexza
     { on = [ "<C-p>", "i" ], run = "shell 'ax-identify \"$@\"' --block"},
-    { on = [ "<C-p>", "w" ], run = "shell 'feh --bg-fill --no-fehbg \"$@\"' --block"}
+    { on = [ "<C-p>", "w" ], run = "shell 'feh --bg-fill --no-fehbg \"$@\"' --block"},
+
+    # Shortcuts - Dots
+    { on = ["g", ".", "c"], run="cd ~/.config" },
+    { on = ["g", ".", "b"], run="cd ~/.local/bin" },
+    { on = ["g", ".", "l"], run="cd ~/.local/" },
+    { on = ["g", ".", "s"], run="cd ~/.local/share" },
+    { on = ["g", ".", "v"], run="cd ~/.var" },
+
+    # Shortcuts - Root
+    { on = ["g", "/", "r"], run="cd /" },
+    { on = ["g", "/", "e"], run="cd /etc" },
+    { on = ["g", "/", "m"], run="cd /media" },
+    { on = ["g", "/", "o"], run="cd /opt" },
+    { on = ["g", "/", "s"], run="cd /usr/share" },
+    { on = ["g", "/", "u"], run="cd /usr" },
+    { on = ["g", "/", "l"], run="cd /usr/local/" },
+    { on = ["g", "/", "v"], run="cd /var" },
 ]
 

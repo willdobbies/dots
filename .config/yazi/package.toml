@@ -19,9 +19,9 @@ rev = "5eea960"
 hash = "a030fe48d91b04341ad2fba9be957df"
 
 [[plugin.deps]]
-use = "stelcodes/bunny"
-rev = "a0b4e18"
-hash = "7acba2bb504c67dd7f2da135b88aae1b"
+use = "dedukun/bookmarks"
+rev = "fbb7c00"
+hash = "1d231a808d3344546380df33daf43e91"
 
 [flavor]
 deps = []
