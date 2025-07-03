@@ -1,0 +1,9 @@
+# Fonts
+font pango:Hack Nerd Font 8
+
+# Windows
+default_border pixel 2
+
+# Gaps
+gaps inner 4
+gaps outer 0
