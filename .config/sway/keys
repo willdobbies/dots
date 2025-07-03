@@ -7,13 +7,14 @@ set $right l
 
 # Launchers & commands
 set $term x-terminal-emulator
-set $menu rofi -show drun,window
-set $power wlogout
+set $menu rofi -show
+set $power wlogout -p layer-shell
 
 # --- Basic ---
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
+bindsym $mod+Shift+d exec $menu window
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 floating_modifier $mod normal
@@ -90,15 +91,31 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 # Resize mode
 mode "resize" {
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym $left resize shrink width 25px
+    bindsym $down resize grow height 25px
+    bindsym $up resize shrink height 25px
+    bindsym $right resize grow width 25px
+    bindsym Left resize shrink width 25px
+    bindsym Down resize grow height 25px
+    bindsym Up resize shrink height 25px
+    bindsym Right resize grow width 25px
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Gaps mode
+mode "gaps" {
+    #bindsym $left gaps left all plus 4
+    #bindsym $down gaps bottom all plus 4
+    #bindsym $up gaps top all plus 4
+    #bindsym $right gaps right all plus 4
+    bindsym 0 gaps outer all set 0 ; gaps inner all set 0
+    bindsym 1 gaps outer all set 6 ; gaps inner all set 4
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+g mode "gaps"
+
+# --- Toggle status bar
+bindsym $mod+Shift+b exec swaymsg bar mode toggle

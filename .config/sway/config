@@ -1,29 +1,45 @@
-include /etc/sway/config-vars.d/*
+#include /etc/sway/config-vars.d/*
 
-include startup
-include theme
-include keys
+# --- Applications
+exec systemd-inhibit --what=handle-power-key sleep infinity
+exec mako --font="Hack Nerd Font 8"
+exec blueman-applet
+exec gammastep -O 4500
 
-include /etc/sway/config.d/*
+# --- Wallpaper
+output * bg ~/Img/wallpaper fill
 
-# Bar
+# --- Fonts
+font pango:Hack Nerd Font 8
+
+# --- Windows
+default_border pixel 2
+
+# --- Gaps
+gaps inner 4
+gaps outer 6
+
+# --- Bar
 bar {
-    position top
-    font "Hack Nerd Font 8"
-    status_command i3blocks
-    gaps 0
+    swaybar_command waybar
 }
 
-# Mouse config
-input "1739:52981:SYNA2BA6:00_06CB:CEF5_Touchpad" {
-    dwt enabled              # Disable-while-typing
-    tap enabled              # Tap-to-click
-    natural_scroll enabled   # Natural (reverse) scrolling
-    middle_emulation enabled # Middle-click with two fingers
+# --- Mouse config
+input "1739:0:Synaptics_TM3276-022" {
+    scroll_factor 0.20
+    dwt disabled
+    tap disabled
+    natural_scroll enabled
+    middle_emulation disabled
 }
 
-# Screen lock
+# --- Lockscreen
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
+
+# --- Keymap
+include keys
+
+#include /etc/sway/config.d/*

@@ -1,8 +1,0 @@
-# Applications
-exec systemd-inhibit --what=handle-power-key sleep infinity
-exec mako --font="Hack Nerd Font 14"
-exec blueman-applet
-exec gammastep -O 4500
-
-# Wallpaper
-output * bg ~/Img/wallpaper fill
