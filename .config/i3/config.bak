@@ -6,9 +6,15 @@ default_border pixel 3
 hide_edge_borders smart
 
 # Gaps
-gaps inner 10
-smart_gaps off
-
+#gaps inner 0
+#smart_gaps off
+# Startup applications
+exec --no-startup-id blueman-applet
+exec --no-startup-id picom
+exec --no-startup-id wallpaper-update
+exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-fill --no-fehbg ~/Img/wallpaper
+# Keybinds
 set $mod Mod4
 
 set $left h
@@ -16,7 +22,7 @@ set $down j
 set $up k
 set $right l
 
-set $term x-terminal-emulator
+set $term kitty
 set $menu rofi -show drun run
 set $powermenu rofi -show power-menu -modi power-menu:rofi-power-menu
 
@@ -165,34 +171,17 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 bindsym $mod+r mode "resize"
 
 #tiling_drag modifier 
 #floating_modifier Mod4
 
 bindsym $mod+shift+b bar mode toggle
-exec --no-startup-id blueman-applet
-exec --no-startup-id picom
-exec --no-startup-id wallpaper-update
-exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale --no-fehbg ~/Pictures/.wallpaper
-#bar {
-#        status_command i3status
-#}
-
-bar {
-  status_command i3blocks
-  i3bar_command   i3bar
-  #font pango:monospace 10
-  #font pango: FontAwesome Regular 10
-
-  position top
-  colors {
-	  #background #00000099
-	  background #111111
-  }
-}
-
 #######
 #THEME#
 #######
@@ -209,27 +198,27 @@ set $gray #a89984
 set $darkgray #1d2021
 
 
-#bar {
-#  status_command i3blocks
-#  i3bar_command   i3bar
-#
-#  position top
-#  colors {
-#      background $bg
-#      statusline $yellow
-#      focused_workspace    $aqua $aqua $darkgray
-#      inactive_workspace   $darkgray $darkgray $gray
-#      active_workspace     $darkgray $darkgray $gray
-#      urgent_workspace     $red $red $bg
-#  }
-#}
+bar {
+  status_command i3blocks
+  i3bar_command   i3bar
+
+  position top
+  colors {
+      background $bg
+      statusline $yellow
+      focused_workspace    $aqua $aqua $darkgray
+      inactive_workspace   $darkgray $darkgray $gray
+      active_workspace     $darkgray $darkgray $gray
+      urgent_workspace     $red $red $bg
+  }
+}
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $gray $purple $darkgray
-client.unfocused        $darkgray $darkgray $gray $purple $darkgray
-client.urgent           $red $red $white $red $red
+#client.focused          $blue $blue $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $gray $purple $darkgray
+#client.unfocused        $darkgray $darkgray $gray $purple $darkgray
+#client.urgent           $red $red $white $red $red
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
@@ -237,3 +226,5 @@ client.urgent           $red $red $white $red $red
 #client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 #client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 #client.urgent           $red $red $white $red $red
+
+#client.background       #FFFFFF

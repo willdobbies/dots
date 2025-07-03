@@ -6,6 +6,5 @@ default_border pixel 3
 hide_edge_borders smart
 
 # Gaps
-gaps inner 10
-smart_gaps off
-
+#gaps inner 0
+#smart_gaps off
