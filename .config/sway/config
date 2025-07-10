@@ -1,6 +1,7 @@
 #include /etc/sway/config-vars.d/*
 
 # --- Applications
+exec_always systemctl --user start sway-session.target
 exec systemd-inhibit --what=handle-power-key sleep infinity
 exec mako --font="Hack Nerd Font 8"
 exec blueman-applet

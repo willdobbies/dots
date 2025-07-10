@@ -15,7 +15,7 @@
     "bar_id": "bar-0",
     "ipc": true,
 
-    // "position": "top",
+    "position": "bottom",
 
     // If height property would be not present, it'd be calculated dynamically
     "height": 24,
@@ -29,15 +29,14 @@
         "sway/window"
     ],
     "modules-right": [
-        "network",
-        // "idle_inhibitor",
-        "memory",
         "cpu",
-        "temperature",
-        // "custom/keyboard-layout",
-        // "backlight",
-        //"pulseaudio",
+        "memory",
         "battery",
+        "network",
+        "temperature",
+        "backlight",
+        "idle_inhibitor",
+        "pulseaudio",
         "clock#date",
         "clock#time",
         "tray"
@@ -49,7 +48,7 @@
     // -------------------------------------------------------------------------
 
     "backlight": {
-        "format": " {percent}%",
+        "format": " {percent}%",
         "interval": 2,
         "on-scroll-up": "brightnessctl set +2%",
         "on-scroll-down": "brightnessctl set 2%-"
@@ -86,12 +85,12 @@
       "format": " {:%e %b %Y}", // Icon: calendar-alt
       "tooltip-format": "{:%e %B %Y}",
       "locale": "en_US.UTF-8",
-      "timezone": "America/Los Angeles",
+      "timezone": "America/Los_Angeles",
     },
 
     "cpu": {
         "interval": 3,
-        "format": " {usage}% ({load})", // Icon: microchip
+        "format": " {usage}%", // Icon: microchip
         "states": {
           "warning": 70,
           "critical": 90
@@ -108,7 +107,7 @@
 
     "memory": {
         "interval": 3,
-        "format": " {}%", // Icon: memory
+        "format": " {}%", // Icon: memory
         "states": {
             "warning": 70,
             "critical": 90
@@ -117,8 +116,8 @@
 
     "network": {
         "interval": 3,
-        "format-wifi": "WIFI {essid}", // Icon: wifi
-        "format-ethernet": "ETH {ipaddr}/{cidr}", // Icon: ethernet
+        "format-wifi": "  {essid}", // Icon: wifi
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "!  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr} (signal: {signalStrength}%)"
     },
@@ -126,7 +125,7 @@
     "pulseaudio": {
         "scroll-step": 2,
         "format": "{icon} {volume}%",
-        "format-muted": " Muted", // Icon: volume-mute
+        "format-muted": " Muted", // Icon: volume-mute
         "format-icons": {
             "headphones": "", // Icon: headphones
             "handsfree": "", // Icon: headset
