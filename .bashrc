@@ -112,6 +112,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# Program setups
+if [ -x /usr/bin/zoxide ]; then
+    eval "$(zoxide init bash)"
+fi
+
+if [ -x /usr/bin/fzf ]; then
+    eval "$(fzf --bash)"
+fi
+
+if [ -f "$HOME/.config/yazi/quitcd.sh" ]; then
+    source "$HOME/.config/yazi/quitcd.sh"
+fi
+
 # Paths
 export PATH="$PATH:$HOME/.local/bin"
 
@@ -121,13 +135,6 @@ export MANPAGER='nvim +Man!'
 
 # Python
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-source "$HOME/.local/venv/bin/activate"
-
-# PyEnv
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init - bash)"
-
-# Configs
-source "$HOME/.config/yazi/quitcd.sh"
-source "/usr/share/doc/fzf/examples/key-bindings.bash"
+if [ -f "$HOME/.local/venv/bin/activate" ]; then
+    source "$HOME/.local/venv/bin/activate"
+fi
