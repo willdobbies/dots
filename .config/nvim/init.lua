@@ -41,33 +41,30 @@ vim.call('plug#begin')
 -- Navigation
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'mikavilpas/yazi.nvim'
-Plug 'nvim-lua/plenary.nvim'
+--Plug 'mikavilpas/yazi.nvim'
+--Plug 'nvim-lua/plenary.nvim'
+Plug 'Kicamon/yazi.nvim'
 
 -- VCS
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 
 -- UI
-Plug 'folke/todo-comments.nvim'
 Plug'nvim-lualine/lualine.nvim'
-
 Plug 'folke/which-key.nvim'
-Plug 'folke/zen-mode.nvim'
+Plug 'xiyaowong/transparent.nvim'
 
 -- Themes
 Plug'nanotech/jellybeans.vim'
 Plug'shaunsingh/nord.nvim'
-
--- LSP / Formatting
---Plug 'neovim/nvim-lspconfig'
---Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'stevearc/conform.nvim'
+Plug'ellisonleao/gruvbox.nvim'
 
 vim.call('plug#end')
 
+require('yazi').setup()
+
 --- THEME ---
-vim.cmd('silent! colorscheme jellybeans')
+vim.cmd('silent! colorscheme gruvbox')
 
 --- KEYMAP ---
 vim.g.mapleader = ' '
@@ -89,9 +86,24 @@ vim.keymap.set('n', '<leader>m', ':Marks<CR>')
 vim.keymap.set('n', '<leader>f', ':Yazi<CR>')
 vim.keymap.set('n', '<leader>F', ':tabe|Yazi<CR>')
 
---require('nvim-treesitter.configs').setup({
---    ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'jinja' },
---    auto_install = true,
---    highlight = { enable = true, },
---    indent = { enable = true, },
---})
+vim.g.markdown_folding = 1
+vim.g.markdown_enable_folding = 1
+vim.o.foldlevelstart = 99
+
+require("transparent").setup({
+  -- table: default groups
+  groups = {
+    'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+    'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+    'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+    'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+    'EndOfBuffer',
+  },
+  -- table: additional groups that should be cleared
+  extra_groups = {},
+  -- table: groups you don't want to clear
+  exclude_groups = {},
+  -- function: code to be executed after highlight groups are cleared
+  -- Also the user event "TransparentClear" will be triggered
+  on_clear = function() end,
+})
