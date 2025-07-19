@@ -1,2 +1,0 @@
-#!/bin/bash
-acpi -b | gawk 'match($0, /([0-9]+)%/, a) { printf(" <span>BAT</span> %i <span>%</span> ", a[1])}' | rev | cut -c1- | rev

@@ -32,28 +32,26 @@ markup=pango
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+label=🔳 CPU
 interval=10
 #min_width=CPU: 100.00%
 separator=true
-color=#fb4934
 
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=💾 MEM
 separator=false
 interval=30
-color=#b8bb26
+separator=true
 
 [memory]
-label=SWAP
+label=📀 SWAP
 instance=swap
 separator=true
 interval=30
-color=#b8bb26
 
 # Disk usage
 #
@@ -61,18 +59,17 @@ color=#b8bb26
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+label=💿 DISK
 #instance=/mnt/data
 interval=30
-color=#fb4934
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
+label=📡 NET
 #instance=wlan0
-#color=#00FF00
 interval=10
 separator=false
 
@@ -80,12 +77,10 @@ separator=false
 #instance=wlp3s0
 interval=10
 separator=false
-color=#b8bb26
 
 [bandwidth]
 #instance=eth0
 interval=5
-color=#b8bb26
 
 #[load_average]
 #interval=10
@@ -95,18 +90,16 @@ color=#b8bb26
 # The battery instance defaults to 0.
 [battery]
 #label=BAT
-command=~/.config/i3blocks/battery
-#label=⚡
+command=~/.config/i3blocks/battery.sh
 instance=1
 interval=2
-color=#fabd2f
 
 # Date Time
 #
 [time]
+label=📆
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
-color=#b8bb26
 
 # Temperature
 #
@@ -114,9 +107,8 @@ color=#b8bb26
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+label=🔥TEMP
 interval=10
-color=#fabd2f
 
 # Volume indicator
 #
@@ -124,8 +116,7 @@ color=#fabd2f
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=VOL
-#label=♪
+label=🔈VOL
 instance=Master
 #instance=PCM
 interval=once

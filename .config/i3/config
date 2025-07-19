@@ -3,10 +3,10 @@ include ~/.config/i3/keybinds.conf
 #include ~/.config/i3/theme.conf
 
 # Base font
-font pango:Hack-Regular 10
+font pango:Hack-Regular 8
 
 # Borders
-default_border pixel 3
+default_border pixel 2
 hide_edge_borders smart
 
 # Gaps
@@ -18,9 +18,10 @@ bar {
   status_command i3blocks
   i3bar_command i3bar
   position top
-  tray_padding 4
+  tray_padding 2
 
   colors {
       background #222222
+      statusline #FFFFFF
   }
 }
