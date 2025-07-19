@@ -23,5 +23,10 @@ use = "dedukun/bookmarks"
 rev = "fbb7c00"
 hash = "1d231a808d3344546380df33daf43e91"
 
+[[plugin.deps]]
+use = "boydaihungst/gvfs"
+rev = "e1e0df3"
+hash = "7e4fdb9b48b5e792af034142b5381714"
+
 [flavor]
 deps = []
