@@ -30,11 +30,3 @@ fi
 export QT_QPA_PLATFORMTHEME=gtk3
 export QT_STYLE_OVERRIDE=adwaita-dark
 export QT_WAYLAND_DECORATION=adwaita-dark
-
-# Thinkpad settings
-if [ -n "$(xinput list --name-only | grep 'Synaptics TM3276-022')" ]; then
-    xinput set-prop 'Synaptics TM3276-022' 'libinput Disable While Typing Enabled' 0
-    xinput set-prop 'Synaptics TM3276-022' 'libinput Scrolling Pixel Distance' 50
-    xinput set-prop 'Synaptics TM3276-022' 'libinput Tapping Enabled' 0
-    xinput set-prop 'Synaptics TM3276-022' 'libinput Natural Scrolling Enabled' 1
-fi

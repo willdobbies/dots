@@ -118,8 +118,8 @@ if [ -x /usr/bin/zoxide ]; then
     eval "$(zoxide init bash)"
 fi
 
-if [ -x /usr/bin/fzf ]; then
-    eval "$(fzf --bash)"
+if [ -x $HOME/.local/bin/fzf ]; then
+    eval "$($HOME/.local/bin/fzf --bash)"
 fi
 
 if [ -f "$HOME/.config/yazi/quitcd.sh" ]; then
