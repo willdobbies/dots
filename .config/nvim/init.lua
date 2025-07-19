@@ -86,9 +86,9 @@ vim.keymap.set('n', '<leader>m', ':Marks<CR>')
 vim.keymap.set('n', '<leader>f', ':Yazi<CR>')
 vim.keymap.set('n', '<leader>F', ':tabe|Yazi<CR>')
 
-vim.g.markdown_folding = 1
-vim.g.markdown_enable_folding = 1
-vim.o.foldlevelstart = 99
+--vim.g.markdown_folding = 1
+--vim.g.markdown_enable_folding = 1
+--vim.o.foldlevelstart = 99
 
 require("transparent").setup({
   -- table: default groups
