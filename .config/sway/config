@@ -1,29 +1,27 @@
-#include /etc/sway/config-vars.d/*
+include startup.conf
+include keymap.conf
 
-# --- Applications
-exec systemd-inhibit --what=handle-power-key sleep infinity
-exec mako --font="Hack Nerd Font 8"
-exec blueman-applet
-exec_always "pkill kanshi; kanshi"
-exec gammastep -O 4500
-
-# --- Wallpaper
-output * bg ~/Img/wallpaper fill
-
-# --- Fonts
+# Fonts
 font pango:Hack Nerd Font 8
 
-# --- Windows
-default_border pixel 2
+# Windows
+default_border pixel 1
+hide_edge_borders smart
 
-# --- Gaps
-gaps inner 4
-gaps outer 6
+# Popup handling
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600
+for_window [class="Godot" title="(?:Open|Import|Create|Save|Confirm).*"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 # Bar config
 bar {
   status_command i3blocks
-  i3bar_command i3bar
   position top
   tray_padding 2
 
@@ -32,14 +30,3 @@ bar {
       statusline #FFFFFF
   }
 }
-
-# --- Lockscreen
-exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
-    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -c 000000'
-
-# --- Keymap
-include keymap.conf
-
-#include /etc/sway/config.d/*

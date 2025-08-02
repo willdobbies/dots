@@ -1,12 +1,11 @@
 include ~/.config/i3/startup.conf
 include ~/.config/i3/keybinds.conf
-#include ~/.config/i3/theme.conf
 
-# Base font
+# Font
 font pango:Hack-Regular 8
 
-# Borders
-default_border pixel 2
+# Windows
+default_border pixel 1
 hide_edge_borders smart
 
 # Gaps

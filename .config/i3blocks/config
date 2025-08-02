@@ -32,7 +32,7 @@ markup=pango
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=🔳 CPU
+label=🔳 cpu
 interval=10
 #min_width=CPU: 100.00%
 separator=true
@@ -42,13 +42,13 @@ separator=true
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=💾 MEM
+label=💾 mem
 separator=false
 interval=30
 separator=true
 
 [memory]
-label=📀 SWAP
+label=📀 swap
 instance=swap
 separator=true
 interval=30
@@ -59,7 +59,7 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=💿 DISK
+label=💿 disk
 #instance=/mnt/data
 interval=30
 
@@ -68,7 +68,7 @@ interval=30
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-label=📡 NET
+label=📡 net
 #instance=wlan0
 interval=10
 separator=false
@@ -85,14 +85,28 @@ interval=5
 #[load_average]
 #interval=10
 
+[uptime]
+label=🕰️
+command=uptime -p
+interval=30
+
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
-#label=BAT
+#label=bat
 command=~/.config/i3blocks/battery.sh
 instance=1
 interval=2
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+label=❄️temp
+interval=10
 
 # Date Time
 #
@@ -101,22 +115,13 @@ label=📆
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
 
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[temperature]
-label=🔥TEMP
-interval=10
-
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=🔈VOL
+label=🔈vol
 instance=Master
 #instance=PCM
 interval=once
