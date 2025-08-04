@@ -15,10 +15,3 @@ require("bookmarks"):setup({
     persist = "all",
     file_pick_mode = "parent",
 })
-
-require("zoxide"):setup {
-    update_db = true,
-}
-
-require("gvfs"):setup({
-})

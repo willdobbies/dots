@@ -18,8 +18,9 @@ prepend_keymap = [
     # Better renaming
     { on   = "R", run  = "shell 'vimv \"$@\"' --block", desc = "Bulk rename (vimv)" },
 
-    # Remove zoxide
-    #{ on  = "Z", run = "null" },
+    # Remove z keys
+    { on  = "z", run = "null" },
+    { on  = "Z", run = "null" },
 
     # Plugins
     { on = "<Enter>", run  = "plugin smart-enter" },
