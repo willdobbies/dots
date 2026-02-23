@@ -1,7 +1,0 @@
-map [normal] f toggle_fullscreen
-map [normal] k navigate previous
-map [normal] j navigate next
-map [fullscreen] f toggle_fullscreen
-map [fullscreen] k navigate previous
-map [fullscreen] j navigate next
-set adjust-open best-fit

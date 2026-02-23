@@ -1,7 +1,0 @@
-plugins: fetchart badfiles embedart
-match:
-  preferred:
-      countries: ['US', 'GB|UK']
-      media: ['CD', 'Digital Media|File']
-      original_year: yes
-      ignored_media: ['Vinyl']
