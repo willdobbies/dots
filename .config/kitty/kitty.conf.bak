@@ -17,11 +17,11 @@ map ctrl+page_down next_tab
 # Misc
 enable_audio_bell no
 
-background_opacity 0.90
+background_opacity 0.95
 
-# hide_window_decorations yes
+hide_window_decorations yes
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Nord
 include current-theme.conf
 # END_KITTY_THEME

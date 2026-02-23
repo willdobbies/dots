@@ -14,6 +14,7 @@
     // "layer": "bottom",
     "bar_id": "bar-0",
     "ipc": true,
+    "reload_style_on_change": true,
 
     "position": "bottom",
 
@@ -22,8 +23,8 @@
     "spacing": 0,
 
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
+        "niri/workspaces",
+        "niri/window",
     ],
     "modules-center": [
         "sway/window"
@@ -180,6 +181,20 @@
           ""  // Icon: temperature-full
       ],
       "tooltip": true
+    },
+
+    "niri/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+            "active": "o",
+            "default": "."
+	}
+    },
+
+    "niri/window": {
+	"format": "{title}",
+        "icon": true,
+        "icon-size": 12,
     }
 
 }

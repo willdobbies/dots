@@ -46,12 +46,13 @@
     padding: 0;
 }
 
-/* The whole bar */
-#waybar {
-    background-color: #222222; /* Sway palette: unfocused/background */
-    color: #ffffff; /* Sway palette: focused/text */
+window#waybar {
     font-family: Hack Nerd Font, sans-serif;
     font-size: 10px;
+    background-color: rgba(22, 22, 22, 0.8);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
 /* -----------------------------------------------------------------------------
@@ -190,34 +191,32 @@
 
 #workspaces button {
     border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
     padding-left: 8px;
     padding-right: 8px;
-    color: #888888; /* Sway palette: unfocused/text */
+    color: #888888;
 }
 
 #workspaces button:hover {
-    /* Reset all hover styles */
     background: inherit;
     box-shadow: inherit;
     text-shadow: inherit;
 }
 
 #workspaces button.visible {
-    border-color: #333333; /* Sway palette focused_inactive/border */
-    color: #ffffff; /* Sway palette: focused_inactive/text */
-    background-color: #5f676a; /* Sway palette focused_inactive/background */
+    border-color: #333333;
+    color: #ffffff;
+    background-color: #5f676a;
 }
 
 #workspaces button.focused {
-    border-color: #4c7899; /* Sway palette: focused/border */
-    color: #ffffff; /* Sway palette: focused/text */
-    background-color: #285577; /* Sway palette: focused/background */
+    border-color: #4c7899;
+    color: #ffffff;
+    background-color: #333333;
 }
 
 #workspaces button.urgent {
-    border-color: #2f343a; /* Sway palette: urgent/border */
-    color: #ffffff; /* Sway palette: urgent/text */
-    background-color: #900000; /* Sway palette: urgent/background */
+    border-color: #2f343a;
+    color: #ffffff;
+    background-color: #900000;
 }

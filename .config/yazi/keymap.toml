@@ -49,7 +49,7 @@ prepend_keymap = [
     # Shortcuts - Root
     { on = ["g", "/", "r"], run="cd /" },
     { on = ["g", "/", "e"], run="cd /etc" },
-    { on = ["g", "/", "m"], run="cd /media" },
+    { on = ["g", "/", "m"], run="cd /mnt" },
     { on = ["g", "/", "o"], run="cd /opt" },
     { on = ["g", "/", "s"], run="cd /usr/share" },
     { on = ["g", "/", "u"], run="cd /usr" },
