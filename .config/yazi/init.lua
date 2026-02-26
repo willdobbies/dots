@@ -6,7 +6,10 @@ th.git.ignored_sign = "I"
 th.git.deleted_sign = "D"
 th.git.updated_sign = "U"
 
-require("git"):setup()
+require("git"):setup{
+    -- Order of status signs showing in the linemode
+    order = 0,
+}
 
 require("simple-status"):setup()
 

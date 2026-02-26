@@ -1,6 +1,10 @@
 [mgr]
-border_symbol = "│"
+border_symbol = " "
 
 [flavor]
 dark = "simple"
 light = "simple"
+
+[indicator.padding]
+open="█"
+close="█"
