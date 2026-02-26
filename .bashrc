@@ -137,10 +137,4 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 if [ -f "$HOME/.local/venv/bin/activate" ]; then
     source "$HOME/.local/venv/bin/activate"
 fi
-
 . "$HOME/.cargo/env"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/cj/.lmstudio/bin"
-# End of LM Studio CLI section
-
