@@ -92,9 +92,9 @@ cursor {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "DP-2" {
-    mode "1920x1080"
-    variable-refresh-rate
+output "DP-1" {
+    mode "1920x1080@180.007"
+    variable-refresh-rate on-demand=true
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -259,8 +259,8 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-spawn-at-startup "swww-daemon"
+//spawn-at-startup "waybar"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "nm-applet"
 spawn-at-startup "gammastep -l '32.7:-117.1'"
 spawn-at-startup "/usr/bin/swayidle -w timeout 601 'niri msg action power-off-monitors' timeout 600 'gtklock -d' before-sleep 'gtklock -d'"
@@ -361,7 +361,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open terminal" { spawn "kitty"; }
     Mod+d hotkey-overlay-title="Run launcher" { spawn "rofi" "-show"; }
     Mod+Shift+d hotkey-overlay-title="Run launcher" { spawn "nwg-drawer" "-is" "96" "-nocats" "-spacing" "30" "-close"; }
-    Mod+BackSpace repeat=false hotkey-overlay-title="Session actions" { spawn "wlogout"; }
+    Mod+BackSpace repeat=false hotkey-overlay-title="Session actions" { spawn "rofi" "-show" "rofi-power-menu:rofi-power-menu"; }
     Mod+Shift+BackSpace hotkey-overlay-title="Session actions" { "quit"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -535,8 +535,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    // Mod+Shift+R { switch-preset-window-height; }
+    // Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
