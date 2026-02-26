@@ -118,9 +118,8 @@ if [ -x /usr/bin/zoxide ]; then
     eval "$(zoxide init bash)"
 fi
 
-if [ -x $HOME/.local/bin/fzf ]; then
-    eval "$($HOME/.local/bin/fzf --bash)"
-fi
+source "/usr/share/doc/fzf/examples/completion.bash"
+source "/usr/share/doc/fzf/examples/key-bindings.bash"
 
 if [ -f "$HOME/.config/yazi/quitcd.sh" ]; then
     source "$HOME/.config/yazi/quitcd.sh"
@@ -138,3 +137,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 if [ -f "$HOME/.local/venv/bin/activate" ]; then
     source "$HOME/.local/venv/bin/activate"
 fi
+
+. "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/cj/.lmstudio/bin"
+# End of LM Studio CLI section
+

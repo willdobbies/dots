@@ -1,7 +1,7 @@
 configuration {
  modi: "combi,drun,run,window,ssh";
- combi-modi: "drun,run";
+ combi-modi: "drun,run -show-icons";
  show-icons: true;
 }
 
-@theme "/home/cj/.local/share/rofi/themes/squared-material-red.rasi"
+@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"

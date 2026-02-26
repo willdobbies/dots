@@ -30,3 +30,9 @@ fi
 export QT_QPA_PLATFORMTHEME=gtk3
 export QT_STYLE_OVERRIDE=adwaita-dark
 export QT_WAYLAND_DECORATION=adwaita-dark
+. "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/cj/.lmstudio/bin"
+# End of LM Studio CLI section
+

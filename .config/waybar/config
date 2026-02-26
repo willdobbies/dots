@@ -23,11 +23,11 @@
     "spacing": 0,
 
     "modules-left": [
-        "niri/workspaces",
-        "niri/window",
+        "niri/workspaces"
+        //"niri/window",
     ],
     "modules-center": [
-        "sway/window"
+        "niri/window"
     ],
     "modules-right": [
         "cpu",

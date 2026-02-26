@@ -11,12 +11,6 @@
     "keybind" : "h"
 }
 {
-    "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
-    "text" : "Logout (e)",
-    "keybind" : "e"
-}
-{
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Shutdown (s)",

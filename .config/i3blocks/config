@@ -93,11 +93,11 @@ interval=30
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
-#label=bat
-command=~/.config/i3blocks/battery.sh
-instance=1
-interval=2
+# [battery]
+# #label=bat
+# command=~/.config/i3blocks/battery.sh
+# instance=1
+# interval=2
 
 # Temperature
 #

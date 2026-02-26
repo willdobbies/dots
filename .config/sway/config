@@ -5,8 +5,10 @@ include keymap.conf
 font pango:Hack Nerd Font 8
 
 # Windows
-default_border pixel 1
+default_border pixel 2
 hide_edge_borders smart
+gaps inner 5
+gaps outer 5
 
 # Popup handling
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
