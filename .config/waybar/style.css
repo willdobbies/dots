@@ -6,10 +6,6 @@
  *
  * =========================================================================== */
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
 @keyframes blink-warning {
     70% {
         color: white;
@@ -32,12 +28,6 @@
     }
 }
 
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
 * {
     border: none;
     border-radius: 0;
@@ -49,139 +39,33 @@
 window#waybar {
     font-family: Hack Nerd Font, sans-serif;
     font-size: 10px;
-    background-color: rgba(22, 22, 22, 0.8);
+    background-color: rgba(22, 22, 22, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
-
-/* Each module */
-#backlight,
-#battery,
-#clock,
-#cpu,
-#custom-keyboard-layout,
-#idle_inhibitor,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#tray {
-    padding-right: 5px;
-    padding-left: 5px;
-    border-left: 1px dashed #444444;
+.modules-right .module {
+    padding-right: 7px;
+    padding-left: 7px;
+    border-left: 1px dashed #777777;
 }
 
-#idle_inhibitor{
-    padding-right: 9px;
-}
-
-#backlight {
-    /* No styles */
-}
-
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.warning {
+*.warning {
     color: orange;
 }
 
-#battery.critical {
-    color: red;
-}
-
-/*#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}*/
-
-#clock {
-    /* No styles */
-}
-
-#clock.time {
-}
-
-#cpu {
-  /* No styles */
-}
-
-#cpu.warning {
-    color: orange;
-}
-
-#cpu.critical {
-    color: red;
-}
-
-#custom-keyboard-layout {
-    margin-left: 22px;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: orange;
-}
-
-#memory.critical {
+*.critical {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
 #mode {
-    color: #ffffff; /* Sway palette: urgent/text */
-    background-color: #900000; /* Sway palette: urgent/background */
+    color: #ffffff;
+    background-color: #900000;
     margin-left: 0;
-    /* To compensate for the top border and still have vertical centering */
     padding: 0 16px;
-}
-
-#network {
-    /* No styles */
-}
-
-#network.disconnected {
-    color: orange;
-}
-
-#pulseaudio {
-    /* No styles */
-}
-
-#pulseaudio.muted {
-    /* No styles */
-}
-
-#temperature {
-    /* No styles */
-}
-
-#temperature.critical {
-    color: red;
-}
-
-#tray {
-    /* No styles */
 }
 
 #window {
@@ -190,7 +74,7 @@ window#waybar {
 }
 
 #workspaces button {
-    border-top: 2px solid transparent;
+    border-top: 3px solid transparent;
     padding-bottom: 2px;
     padding-left: 8px;
     padding-right: 8px;
@@ -212,7 +96,7 @@ window#waybar {
 #workspaces button.focused {
     border-color: #4c7899;
     color: #ffffff;
-    background-color: #333333;
+    background-color: rgba(22, 22, 22, 0.35);
 }
 
 #workspaces button.urgent {

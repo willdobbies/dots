@@ -1,0 +1,44 @@
+// =============================================================================
+//
+// Waybar configuration
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+//
+// =============================================================================
+
+{
+    "bar_id": "bar-0",
+    "ipc": true,
+    "reload_style_on_change": true,
+
+    "position": "bottom",
+
+    "height": 20,
+
+    "modules-left": [
+        "niri/workspaces",
+        "sway/workspaces"
+    ],
+    "modules-center": [
+        "niri/window",
+        "sway/window"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "memory",
+        "disk",
+        "battery",
+        "network",
+        "temperature",
+        "backlight",
+        //"idle_inhibitor",
+        "pulseaudio",
+        "clock#date",
+        //"clock#time",
+        "custom/uptime",
+        "tray"
+    ],
+
+    "include": "~/.config/waybar/modules.jsonc"
+}

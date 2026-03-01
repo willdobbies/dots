@@ -1,0 +1,138 @@
+{
+    "backlight": {
+        "format": " {percent}%",
+        "interval": 2,
+        "on-scroll-up": "brightnessctl set +2%",
+        "on-scroll-down": "brightnessctl set 2%-"
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "format": " {icon} {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "" 
+        ],
+        "tooltip": true
+    },
+
+    "clock#time": {
+        "interval": 1,
+        "format": "  {:%H:%M:%S}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+      "interval": 10,
+      "format": " {:%e %b %Y %H:%M:%S}",
+      "tooltip-format": "{:%e %B %Y}",
+      "locale": "en_US.UTF-8",
+      "timezone": "America/Los_Angeles"
+    },
+
+    "cpu": {
+        "interval": 3,
+        "format": "  {usage}%",
+        "states": {
+          "warning": 70,
+          "critical": 90
+        }
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "memory": {
+        "interval": 3,
+        "format": "  {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "network": {
+        "interval": 3,
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "format-disconnected": "!  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr} (signal: {signalStrength}%)"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "  {percentage_used}%"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon}  {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphones": "",
+            "default": ["", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": true
+    },
+
+    "custom/uptime": {
+        "format": "  {}",
+        "exec": "uptime -p",
+        "interval": 1
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\"> {}</span>",
+        "tooltip": false
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": "{value}"
+    },
+
+    "temperature": {
+      "critical-threshold": 75,
+      "interval": 3,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": [
+          "",
+          "",
+          "",
+          "",
+          "" 
+      ],
+      "tooltip": true
+    },
+
+    "niri/workspaces": {
+	"format": "{value}"
+    },
+
+    "niri/window": {
+	"format": "{title}",
+        "icon": true,
+        "icon-size": 12
+    }
+}
