@@ -5,8 +5,8 @@ include keymap.conf
 font pango:Hack Nerd Font 8
 
 # Windows
-default_border pixel 2
-hide_edge_borders smart
+default_border pixel 3
+# hide_edge_borders smart
 gaps inner 5
 gaps outer 5
 
@@ -21,14 +21,14 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-# Bar config
-bar {
-  status_command i3blocks
-  position top
-  tray_padding 2
-
-  colors {
-      background #222222
-      statusline #FFFFFF
-  }
-}
+# # Bar config
+# bar {
+#   status_command waybar
+#   position bottom
+#   tray_padding 2
+# 
+#   colors {
+#       background #222222
+#       statusline #FFFFFF
+#   }
+# }

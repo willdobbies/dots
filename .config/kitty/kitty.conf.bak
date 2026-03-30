@@ -17,9 +17,9 @@ map ctrl+page_down next_tab
 # Misc
 enable_audio_bell no
 
-background_opacity 0.95
+background_opacity 0.90
 
-hide_window_decorations yes
+# hide_window_decorations yes
 
 # BEGIN_KITTY_THEME
 # Nord

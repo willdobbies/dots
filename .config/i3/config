@@ -9,15 +9,16 @@ default_border pixel 1
 hide_edge_borders smart
 
 # Gaps
-gaps inner 0
+gaps inner 24
+gaps outer 24
 smart_gaps off
 
 # Bar config
 bar {
   status_command i3blocks
   i3bar_command i3bar
-  position top
-  tray_padding 2
+  position bottom
+  tray_padding 4
 
   colors {
       background #222222

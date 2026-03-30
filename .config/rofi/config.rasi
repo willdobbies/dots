@@ -4,4 +4,12 @@ configuration {
  show-icons: true;
 }
 
-@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+//@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"
+
+//@theme "/home/cj/.local/share/rofi/themes/squared-nord.rasi"
+
+//@theme "/home/cj/.local/share/rofi/themes/launchpad.rasi"
+
+//@theme "/usr/share/rofi/themes/Paper.rasi"
+
+@theme "/home/cj/.local/share/rofi/themes/spotlight-dark.rasi"

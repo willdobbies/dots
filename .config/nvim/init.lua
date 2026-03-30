@@ -58,13 +58,15 @@ Plug 'xiyaowong/transparent.nvim'
 Plug'nanotech/jellybeans.vim'
 Plug'shaunsingh/nord.nvim'
 Plug'ellisonleao/gruvbox.nvim'
+Plug'joshdick/onedark.vim'
+Plug'vague-theme/vague.nvim'
 
 vim.call('plug#end')
 
 require('yazi').setup()
 
 --- THEME ---
-vim.cmd('silent! colorscheme gruvbox')
+vim.cmd('silent! colorscheme jellybeans')
 
 --- KEYMAP ---
 vim.g.mapleader = ' '

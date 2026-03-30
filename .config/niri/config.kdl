@@ -92,7 +92,7 @@ cursor {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "DP-1" {
+output "DP-2" {
     mode "1920x1080@180.007"
     variable-refresh-rate on-demand=true
 }
@@ -259,14 +259,10 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-//spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "nm-applet"
-spawn-at-startup "gammastep -l '32.7:-117.1'"
-spawn-at-startup "/usr/bin/swayidle -w timeout 601 'niri msg action power-off-monitors' timeout 600 'gtklock -d' before-sleep 'gtklock -d'"
-
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-at-startup "gammastep"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
