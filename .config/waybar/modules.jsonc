@@ -1,9 +1,9 @@
 {
     "backlight": {
         "format": " {percent}%",
-        "interval": 2,
-        "on-scroll-up": "brightnessctl set +2%",
-        "on-scroll-down": "brightnessctl set 2%-"
+        //"interval": 2,
+        "on-scroll-up": "brightnessctl set +1%",
+        "on-scroll-down": "brightnessctl set 1%-"
     },
 
     "battery": {
@@ -12,8 +12,8 @@
             "warning": 25,
             "critical": 15
         },
-        "format": " {icon} {capacity}%",
-        "format-discharging": "{icon} {capacity}%",
+        "format": "BAT+ {capacity}%",
+        "format-discharging": "BAT- {capacity}%",
         "format-icons": [
             "",
             "",
@@ -31,16 +31,16 @@
     },
 
     "clock#date": {
-      "interval": 10,
-      "format": " {:%e %b %Y %H:%M:%S}",
+      "interval": 30,
+      "format": "{:%e %b %Y %H:%M}",
       "tooltip-format": "{:%e %B %Y}",
       "locale": "en_US.UTF-8",
       "timezone": "America/Los_Angeles"
     },
 
     "cpu": {
-        "interval": 3,
-        "format": "  {usage}%",
+        "interval": 5,
+        "format": "CPU {usage}%",
         "states": {
           "warning": 70,
           "critical": 90
@@ -56,8 +56,8 @@
     },
 
     "memory": {
-        "interval": 3,
-        "format": "  {}%",
+        "interval": 5,
+        "format": "RAM {}%",
         "states": {
             "warning": 70,
             "critical": 90
@@ -66,15 +66,15 @@
 
     "network": {
         "interval": 3,
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "format-wifi": "WIFI {essid}",
+        "format-ethernet": "ETH {ipaddr}/{cidr}",
         "format-disconnected": "!  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr} (signal: {signalStrength}%)"
     },
 
     "disk": {
         "interval": 30,
-        "format": "  {percentage_used}%"
+        "format": "DISK {percentage_used}%"
     },
 
     "pulseaudio": {
@@ -91,7 +91,7 @@
     },
 
     "custom/uptime": {
-        "format": "  {}",
+        "format": "UP {}",
         "exec": "uptime -p",
         "interval": 1
     },
@@ -114,8 +114,8 @@
 
     "temperature": {
       "critical-threshold": 75,
-      "interval": 3,
-      "format": "{icon} {temperatureC}°C",
+      "interval": 5,
+      "format": "TEMP {temperatureC}°C",
       "format-icons": [
           "",
           "",

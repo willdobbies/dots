@@ -30,3 +30,4 @@ export QT_QPA_PLATFORMTHEME=gtk3
 # export QT_QPA_PLATFORM=wayland
 export QT_STYLE_OVERRIDE=adwaita-dark
 export QT_WAYLAND_DECORATION=adwaita-dark
+. "$HOME/.cargo/env"

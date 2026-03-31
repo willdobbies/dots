@@ -36,7 +36,7 @@
         "pulseaudio",
         "clock#date",
         //"clock#time",
-        "custom/uptime",
+        //"custom/uptime",
         "tray"
     ],
 

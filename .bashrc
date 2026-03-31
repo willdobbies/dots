@@ -82,3 +82,4 @@ if [ -x /usr/bin/zoxide ]; then
     eval "$(zoxide init bash)"
 fi
 
+. "$HOME/.cargo/env"
