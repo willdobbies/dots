@@ -206,7 +206,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        on
+        off
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -289,7 +289,7 @@ screenshot-path "~/Img/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://yalter.github.io/niri/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
@@ -355,9 +355,11 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open terminal" { spawn "kitty"; }
-    Mod+d hotkey-overlay-title="Run launcher" { spawn "rofi" "-show"; }
-    Mod+Shift+d hotkey-overlay-title="Run launcher" { spawn "nwg-drawer" "-is" "96" "-nocats" "-spacing" "30" "-close"; }
-    Mod+BackSpace repeat=false hotkey-overlay-title="Session actions" { spawn "rofi" "-show" "rofi-power-menu:rofi-power-menu"; }
+    Mod+d hotkey-overlay-title="Rofi launcher" { spawn "rofi" "-show"; }
+    Mod+Shift+W repeat=false hotkey-overlay-title="Rofi window" { spawn "rofi" "-modes" "window" "-show" "window"; }
+    Mod+Shift+S repeat=false hotkey-overlay-title="Rofi SSH" { spawn "rofi" "-modes" "ssh" "-show" "ssh"; }
+    Mod+BackSpace repeat=false hotkey-overlay-title="Rofi Power menu" { spawn "rofi" "-modes" "power-menu" "-show" "power-menu"; }
+    Mod+Delete repeat=false hotkey-overlay-title="Rofi Kill" { spawn "rofi" "-modes" "kill" "-show" "kill"; }
     Mod+Shift+BackSpace hotkey-overlay-title="Session actions" { "quit"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -567,7 +569,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    // Mod+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
