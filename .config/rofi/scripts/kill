@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Kill selected
+if [ ! -z "$1" ]
+then
+    pid=$(echo "$1" | awk '{print $2}')
+    
+    kill -9 "$pid"
+    notify-send "Process Terminated" "Killed PID: $pid"
+    exit 0
+fi
+
+# List user processes
+ps -ef | grep $USER
