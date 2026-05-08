@@ -16,12 +16,11 @@ prepend_keymap = [
     { on  = "J", run = "plugin parent-arrow 1" },
 
     # Better renaming
-    { on   = "R", run  = "shell 'vimv \"$@\"' --block", desc = "Bulk rename (vimv)" },
+    #{ on   = "R", run  = "shell 'vimv \"$@\"' --block", desc = "Bulk rename (vimv)" },
 
     # Compress
     { on = [ "z" ], run="plugin compress", desc="Archive selected files" },
-    # { on  = "z", run = "null" },
-    { on  = "Z", run = "null" },
+    { on   = "Z", run  = "plugin zoxide" },
 
     # Plugins
     { on = "<Enter>", run  = "plugin smart-enter" },
@@ -64,6 +63,16 @@ prepend_keymap = [
     { on = ["g", "/", "t"], run="cd /tmp" },
     { on = ["g", "/", "u"], run="cd /usr" },
     { on = ["g", "/", "v"], run="cd /var" },
+    { on = ["g", "/", "g"], run="cd /run/user/1000/gvfs" },
 
+    # Mount
+    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Select device to mount and jump to its mount point" },
+    { on = [ "M", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount device under cwd" },
+    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Select device then eject" },
+    { on = [ "M", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Select device then force to eject/unmount" },
+    { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
 ]
 

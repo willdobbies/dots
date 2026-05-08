@@ -1,10 +1,21 @@
 [mgr]
 border_symbol = " "
 
-[flavor]
-dark = "simple"
-light = "simple"
+#[flavor]
+#dark = "simple"
+#light = "simple"
 
 [indicator.padding]
 open="█"
 close="█"
+
+[icon]
+prepend_dirs = [
+    { name = "Audio", text = "󰗮" },
+    { name = "App", text = ""},
+    { name = "Code", text = "󰅨" },
+    { name = "Docs", text = "󰈙" },
+    { name = "Img", text = "󰋩" },
+    { name = "Sync", text = "" },
+    { name = "Temp", text = "󰉍" },
+]
