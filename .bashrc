@@ -81,5 +81,3 @@ source_safe "/usr/share/doc/fzf/examples/key-bindings.bash"
 if [ -x /usr/bin/zoxide ]; then
     eval "$(zoxide init bash)"
 fi
-
-. "$HOME/.cargo/env"
