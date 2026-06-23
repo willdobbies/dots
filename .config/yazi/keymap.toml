@@ -15,6 +15,9 @@ prepend_keymap = [
     { on  = "K", run = "plugin parent-arrow -1" },
     { on  = "J", run = "plugin parent-arrow 1" },
 
+    { on  = "<A-k>", run = "seek -5" },
+    { on  = "<A-j>", run = "seek 5" },
+
     # Better renaming
     #{ on   = "R", run  = "shell 'vimv \"$@\"' --block", desc = "Bulk rename (vimv)" },
 

@@ -11,11 +11,14 @@ close="█"
 
 [icon]
 prepend_dirs = [
-    { name = "Audio", text = "󰗮" },
     { name = "App", text = ""},
-    { name = "Code", text = "󰅨" },
+    { name = "Code", text = "󰈮" },
+    { name = "DAW", text = "" },
     { name = "Docs", text = "󰈙" },
-    { name = "Img", text = "󰋩" },
-    { name = "Sync", text = "" },
+    { name = "Draws", text = "" },
+    { name = "Img", text = "󰄀" },
+    { name = "Sync", text = "󰅟" },
+    { name = "Music", text = "󰋋" },
     { name = "Temp", text = "󰉍" },
+    { name = "Videos", text = "󰕧" },
 ]
