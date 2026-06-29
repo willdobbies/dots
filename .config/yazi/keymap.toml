@@ -7,9 +7,9 @@ prepend_keymap = [
     { on  = "q", run = "close" },
 
     # Bookmarks
-    # {on = "m", run = "plugin bookmarks save"},
-    # {on = "'", run = "plugin bookmarks jump"},
-    # {on = ["b", "d"],  run = "plugin bookmarks delete"},
+    {on = "m", run = "plugin bookmarks save"},
+    {on = "'", run = "plugin bookmarks jump"},
+    {on = ["b", "d"],  run = "plugin bookmarks delete"},
 
     # Move parent directories
     { on  = "K", run = "plugin parent-arrow -1" },
@@ -42,14 +42,14 @@ prepend_keymap = [
     { on = [ "<C-p>", "g"], run="shell 'nvim -c \"tab Git\"' --block", desc = "Open git fugitive" },
 
     # Shortcuts - Home
-    { on = ["'", "a"], run="cd ~/Audio" },
-    { on = ["'", "c"], run="cd ~/Code" },
-    { on = ["'", "d"], run="cd ~/Draws" },
-    { on = ["'", "i"], run="cd ~/Img" },
-    { on = ["'", "m"], run="cd ~/Music" },
-    { on = ["'", "s"], run="cd ~/Sync" },
-    { on = ["'", "t"], run="cd ~/Temp" },
-    { on = ["'", "v"], run="cd ~/Videos" },
+    # { on = ["'", "a"], run="cd ~/Audio" },
+    # { on = ["'", "c"], run="cd ~/Code" },
+    # { on = ["'", "d"], run="cd ~/Draws" },
+    # { on = ["'", "i"], run="cd ~/Img" },
+    # { on = ["'", "m"], run="cd ~/Music" },
+    # { on = ["'", "s"], run="cd ~/Sync" },
+    # { on = ["'", "t"], run="cd ~/Temp" },
+    # { on = ["'", "v"], run="cd ~/Videos" },
 
     { on = ["g", ".", "b"], run="cd ~/.local/bin" },
     { on = ["g", ".", "c"], run="cd ~/.config" },

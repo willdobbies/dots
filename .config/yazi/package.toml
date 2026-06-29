@@ -23,5 +23,10 @@ use = "yazi-rs/plugins:mount"
 rev = "38efe09"
 hash = "e3260d0b1feded8c8e3ae3afa1169e30"
 
+[[plugin.deps]]
+use = "dedukun/bookmarks"
+rev = "9ef1254"
+hash = "92fbb5483657fa7976cdf4e0104e18e0"
+
 [flavor]
 deps = []
