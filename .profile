@@ -25,8 +25,3 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-export QT_QPA_PLATFORMTHEME=gtk3
-# export QT_QPA_PLATFORM=wayland
-export QT_STYLE_OVERRIDE=adwaita-dark
-export QT_WAYLAND_DECORATION=adwaita-dark

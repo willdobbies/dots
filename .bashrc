@@ -58,26 +58,37 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Paths
+# add local bin to $PATH
 export PATH="$PATH:$HOME/.local/bin"
 
-# Defaults
-export EDITOR='/usr/bin/nvim'
-export MANPAGER='nvim +Man!'
-export FZF_DEFAULT_COMMAND="fdfind --type f --exclude '.*'"
+# load custom aliases
+if [ -f "$HOME/.bash_aliases" ]; then
+    source "$HOME/.bash_aliases"
+fi
 
-source_safe()
-{
-    if [ -f "$1" ]; then
-        . "$1"
+# fzf integration
+if [ -x "$(command -v fzf)" ]; then
+    eval "$(fzf --bash)"
+    export FZF_DEFAULT_COMMAND="fdfind --type f --exclude '.*'"
+fi
+
+# zoxide integration
+if [ -x "$(command -v zoxide)" ]; then
+    eval "$(zoxide init bash)"
+fi
+
+# yazi quit on cd
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+            builtin cd -- "$cwd"
     fi
+    rm -f -- "$tmp"
 }
 
-source_safe "$HOME/.bash_aliases"
-source_safe "$HOME/.cargo/env"
-source_safe "$HOME/.config/yazi/quitcd.sh"
-source_safe "/usr/share/doc/fzf/examples/key-bindings.bash"
-
-if [ -x /usr/bin/zoxide ]; then
-    eval "$(zoxide init bash)"
+# prefer nvim for editing and manpage viewing
+if [ -x "$(command -v nvim)" ]; then
+    export EDITOR='/usr/bin/nvim'
+    export MANPAGER='nvim +Man!'
 fi
