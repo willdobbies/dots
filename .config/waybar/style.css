@@ -129,6 +129,14 @@ window#waybar {
     border-color: #99624c;
 }
 
+#battery {
+    border-color: #994c52;
+}
+
+#backlight {
+    border-color: #99624c;
+}
+
 #network {
     border-color: #624c99;
 }
