@@ -9,16 +9,16 @@ border_symbol = " "
 open="█"
 close="█"
 
-[icon]
-prepend_dirs = [
-    { name = "App", text = ""},
-    { name = "Code", text = "󰈮" },
-    { name = "DAW", text = "" },
-    { name = "Docs", text = "󰈙" },
-    { name = "Draws", text = "" },
-    { name = "Img", text = "󰄀" },
-    { name = "Sync", text = "󰅟" },
-    { name = "Music", text = "󰋋" },
-    { name = "Temp", text = "󰉍" },
-    { name = "Videos", text = "󰕧" },
-]
+# [icon]
+# prepend_dirs = [
+#     { name = "App", text = ""},
+#     { name = "Code", text = "󰈮" },
+#     { name = "DAW", text = "" },
+#     { name = "Docs", text = "󰈙" },
+#     { name = "Draws", text = "" },
+#     { name = "Img", text = "󰄀" },
+#     { name = "Sync", text = "󰅟" },
+#     { name = "Music", text = "󰋋" },
+#     { name = "Temp", text = "󰉍" },
+#     { name = "Videos", text = "󰕧" },
+# ]

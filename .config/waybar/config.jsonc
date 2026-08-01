@@ -13,16 +13,18 @@
 
     "position": "bottom",
 
-    "height": 20,
+    "height": 24,
 
     "modules-left": [
-        "niri/workspaces"
+        "niri/workspaces",
+        "niri/window"
         //"sway/workspaces"
     ],
-    "modules-center": [
-        "niri/window"
-        //"sway/window"
-    ],
+
+    //"modules-center": [
+    //    //"niri/window"
+    //    //"sway/window"
+    //],
 
     "modules-right": [
         "cpu",
@@ -30,9 +32,9 @@
         "disk",
         "battery",
         "network",
-        "temperature",
-        "backlight",
-        "idle_inhibitor",
+        //"temperature",
+        //"backlight",
+        //"idle_inhibitor",
         "pulseaudio",
         "clock#date",
         //"clock#time",

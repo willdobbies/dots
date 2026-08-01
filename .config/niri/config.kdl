@@ -97,12 +97,17 @@ output "DP-2" {
     variable-refresh-rate on-demand=true
 }
 
+output "DP-1" {
+    mode "1920x1080@180.007"
+    variable-refresh-rate on-demand=true
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 24
+    gaps 0
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -147,10 +152,10 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
-        width 1
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -186,10 +191,10 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
-        width 1
-        active-color "#ffc87f"
+        width 1.5
+        active-color "#7fc8ff"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
@@ -251,6 +256,17 @@ layout {
         // top 64
         // bottom 64
     }
+
+    tab-indicator {
+        active-color "#7fff88"
+        place-within-column
+        width 3
+    }
+
+    // insert-hint {
+    //     on
+    //     color "#FFFFFF"
+    // }
 }
 
 // Add lines like this to spawn processes at startup.
@@ -263,6 +279,7 @@ layout {
 spawn-at-startup "awww-daemon"
 spawn-at-startup "nm-applet"
 spawn-at-startup "gammastep"
+spawn-at-startup "blueman-applet"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -279,7 +296,7 @@ prefer-no-csd
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Img/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+// screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -289,7 +306,8 @@ screenshot-path "~/Img/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://yalter.github.io/niri/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    off
+    // on
+    // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
@@ -338,6 +356,11 @@ window-rule {
     draw-border-with-background false
 }
 
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -360,6 +383,7 @@ binds {
     Mod+Shift+S repeat=false hotkey-overlay-title="Rofi SSH" { spawn "rofi" "-modes" "ssh" "-show" "ssh"; }
     Mod+BackSpace repeat=false hotkey-overlay-title="Rofi Power menu" { spawn "rofi" "-modes" "power-menu" "-show" "power-menu"; }
     Mod+Delete repeat=false hotkey-overlay-title="Rofi Kill" { spawn "rofi" "-modes" "kill" "-show" "kill"; }
+    Mod+E repeat=false hotkey-overlay-title="File explorer" { spawn "thunar"; }
     Mod+Shift+BackSpace hotkey-overlay-title="Session actions" { "quit"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -528,11 +552,11 @@ binds {
     // Consume one window from the right to the bottom of the focused column.
     // Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    //Mod+Period { expel-window-from-column; }
+    // Mod+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
-    // Mod+R { switch-preset-column-width-back; }
+    Mod+Shift+R { switch-preset-column-width-back; }
     // Mod+Shift+R { switch-preset-window-height; }
     // Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
@@ -545,7 +569,7 @@ binds {
     Mod+C { center-column; }
 
     // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
+    // Mod+Shift+C { center-visible-columns; }
 
     // Finer width adjustments.
     // This command can also:
@@ -559,8 +583,8 @@ binds {
     Mod+Equal { set-column-width "+10%"; }
 
     // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    // Mod+Shift+Minus { set-window-height "-10%"; }
+    // Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
@@ -569,7 +593,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    // Mod+W { toggle-column-tabbed-display; }
+    Mod+W { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have

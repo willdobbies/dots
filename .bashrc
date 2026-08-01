@@ -87,8 +87,16 @@ function y() {
     rm -f -- "$tmp"
 }
 
+# custom prompt color
+PS1='\[\033[1;32m\]\u\[\033[1;37m\]@\[\033[1;36m\]\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\$ '
+
 # prefer nvim for editing and manpage viewing
 if [ -x "$(command -v nvim)" ]; then
     export EDITOR='/usr/bin/nvim'
     export MANPAGER='nvim +Man!'
+fi
+
+# start session if on tty1
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then 
+  exec niri-session
 fi
