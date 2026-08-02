@@ -1,0 +1,23 @@
+directory: /mnt/media/music
+library: ~/.config/beets/musiclibrary.db
+import:
+    copy: yes    # Copy files to new location
+
+# Prefer MusicBrainz over Discogs when sources don't match
+plugins: musicbrainz discogs fetchart embedart
+
+musicbrainz:
+    data_source_mismatch_penalty: 0.3  # Lower penalty = preferred
+discogs:
+    data_source_mismatch_penalty: 0.8  # Higher penalty = less preferred
+
+fetchart:
+  cautious: true
+  cover_names: front back
+  maxwidth: 600
+  sources:
+      - filesystem
+      - coverart: release
+      - itunes
+      - coverart: releasegroup
+      - '*'
