@@ -9,6 +9,15 @@ prepend_fetchers = [
     {id = "git", url = "*/", run  = "git", group="git"},
 ]
 
+prepend_preloaders = [
+    { url = "*.kra", run = "krita-preview" },
+    { url = "*.kra~", run = "krita-preview" },
+]
+prepend_previewers = [
+    { url = "*.kra", run = "krita-preview" },
+    { url = "*.kra~", run = "krita-preview" },
+]
+
 [[open.prepend_rules]]
 url = "bulk-rename.txt"
 use = "bulk-rename"
